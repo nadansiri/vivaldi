@@ -1,0 +1,54 @@
+ {
+    "posterFirstName":"Nada",
+   "posterLastName":"Nsiri",
+    "posterId":"610b2bce6edf6d24dcf94248",
+    "activityTitle":"Activity 1",
+    "activityDescription":"This is the activity description",
+    "deadline"
+    "club":"Club 1"
+  },
+
+//Student Projects
+  {
+    "posterFirstName":"Nada",
+   "posterLastName":"Nsiri",
+    "posterId":"610b2bce6edf6d24dcf94248",
+    "activityId":"610c48742d311522c8eb66f0",
+    "review":"good",
+    "mark":20
+  },
+  //
+  {
+      "title":"Covid19",
+    "newsBody":"this is News"
+  }
+  //
+ //Activities // ACTIONS 
+  SUBMIT_NEWS ,
+  LOAD_NEWS ,
+  FAIL_NEWS ,
+  GET_STUDENT_PROJECT ,
+  //Student Projects // ACTIONS
+  SUBMIT_NEWS,
+  LOAD_NEWS,
+  FAIL_NEWS,
+  GET_STUDENT_PROJECT,
+  //News // ACTIONS
+  SUBMIT_NEWS,
+  LOAD_NEWS,
+  FAIL_NEWS,
+  GET_NEWS
+****************
+//Activities
+   activity: {},
+   loadActivity: false,
+   SubmittedActivities: [],
+//Students'Projects
+   studentProject: {},
+   loadStudentProject: false,
+   SubmittedStudentProjects: [],
+//News
+   newNewsPiece: {},
+   loadNews: false,
+   SubmittedNews: [],
+//

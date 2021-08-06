@@ -1,0 +1,26 @@
+FONTS:
+*******
+font-family: 'Concert One', cursive;
+font-family: 'Lobster', cursive;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Raleway', sans-serif;
+font-family: 'Roboto', sans-serif;
+________________________________________
+
+COLORS:from green to yellow
+*****************************
+rgb(42,156,46) forest green
+rgb(149,188,15) citrus
+rgb(50,167,225) summer sky
+rgb(75,50,137) blue gem
+rgb(120,47,135) vivid violet
+rgb(221,34,133) deep cerise
+rgb(218,26,34) fire engine red
+rgb(238,129,30) carrot orange
+rgb(245,185,9) selective yellow
+rgb(243,212,27) turbo
+*********
+
+
+
+
