@@ -10,6 +10,9 @@ const newsPieceSchema = new Schema(
     newsBody: {
       type: String,
     },
+    newsPhotoURL: {
+      type: String,
+    },
   },
   { timestamps: true }
 );

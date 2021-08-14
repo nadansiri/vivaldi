@@ -22,6 +22,10 @@ const teacherSchema = new Schema({
         required: true,
         unique: true,
     },
+    avatarUrl:{
+        type:String,
+        default:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhqI4txTRkj4_pCfr3NlNdbCbLYgX-nqjMX8wHEfx_A6Q8luaudlecd84nMDGZ1a4nwA0&usqp=CAU",
+    },
     password: {
         type: String,
         required: true,

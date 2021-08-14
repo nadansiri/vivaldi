@@ -1,15 +1,15 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 import { useDispatch, useSelector} from "react-redux";
-import { deleteSubmittedNews} from "../Redux/actions/publicActions";
+import { deleteActivity} from "../Redux/actions/publicActions";
 
 
-const PostNewsDelete = (props) => {
+const ActivityDelete = (props) => {
   const deleteID = props.id;
   const errors = useSelector((state) => state.publicReducer.errors);
   const dispatch = useDispatch();
   const handleDelete = () => {
-    dispatch(deleteSubmittedNews(deleteID))
+    dispatch(deleteActivity(deleteID))
     alert(`The Activity "${deleteID}" was deleted successfully!`);
     
   };
@@ -22,4 +22,4 @@ const PostNewsDelete = (props) => {
   );
 };
 
-export default PostNewsDelete;
+export default ActivityDelete;

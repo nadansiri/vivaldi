@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import "./App.css";
 //
-import FeaturedCarousel from "./components/FeaturedCarousel";
 import MyNavbar from "./components/MyNavbar";
 import MyFooter from "./components/MyFooter";
 //Public pages
@@ -12,73 +11,45 @@ import ContactUs from "./pages/ContactUs";
 import StudentSignUp from "./pages/StudentSignUp";
 import StudentSignIn from "./pages/StudentSignIn";
 import StudentDashbord from "./pages/StudentDashbord";
-import { authedStudent } from "./Redux/actions/studentActions";
-
 //Teachers
 import TeacherSignUp from "./pages/TeacherSignUp";
 import TeacherSignIn from "./pages/TeacherSignIn";
 import TeacherDashbord from "./pages/TeacherDashbord";
-import { authedTeacher } from "./Redux/actions/teacherActions";
-
 //Admin
 import ManageAccounts from "./pages/ManageAccounts";
 //
 import { Route, Switch } from "react-router-dom";
 import PrivateRoute from "./routes/PrivateRoute";
-import { useDispatch, useSelector } from "react-redux";
 import PrivateRouteTeachers from "./routes/PrivateRouteTeachers";
-import TeacherNav from "./components/TeacherNav";
-import StudentNav from "./components/StudentNav";
+
+import { useSelector } from "react-redux";
 import PublicForum from "./components/PublicForum";
 import MyClub from "./components/MyClub";
 import MyStudentProjects from "./components/MyStudentProjects";
-import {AboutArtClub, AboutMusicClub, AboutSportClub} from "./pages/AboutOurClubs";
-
-//
-//
+import {AboutArtClub, AboutMusicClub, AboutSportClub, Events} from "./pages/AboutOurClubs";
+import SpinnerLoad from "./components/SpinnerLoad";
+import MapContainer from "./components/MapContainer";
 
 function App() {
-  /*
-  const dispatch = useDispatch()
-  const getStudent = () => dispatch(authedStudent())
-  const getTeacher = () => dispatch(authedTeacher())
-*/
-  const isAuthAsTeacher = useSelector((state) => state.teacherReducer.isAuthTeacher);
   const teacher = useSelector((state) => state.teacherReducer.teacher);
-  const isAuthAsStudent = useSelector((state) => state.studentReducer.isAuthStudent);
-  const student = useSelector((state) => state.studentReducer.student);
-  /*
-  //const getComments =() => dispatch(allPublicComments());
-  useEffect(() => {
-    getStudent()
-    getTeacher()
-   // getComments()
-   
-  }, [])*/
+  const loadTeacher = useSelector((state) => state.teacherReducer.loadTeacher);
+  const loadStudent = useSelector((state) => state.studentReducer.loadStudent);
+  const load = useSelector((state) => state.publicReducer.load);
   return (
     <div className="App">
       <MyNavbar />
-      <FeaturedCarousel />
-      {/********The Authed users Navbars***********/}
-      {isAuthAsTeacher ? (
+      {load||loadStudent||loadTeacher ? (
         <>
-        <TeacherNav/>
-          
-        </>
+      <SpinnerLoad/>
+      </>
       ) : (
         null
       )}
-      {isAuthAsStudent ? (
-        <>
-        <StudentNav/> 
-        </>
-      ) : (
-        null
-      )}
-      
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/aboutus" component={AboutUs} />
+        <Route path="/events" component={Events} />
+
         <Route
           path="/contactus"
           render={(props) => <ContactUs {...props} isAdmin={teacher.role} />}
@@ -96,8 +67,10 @@ function App() {
         <PrivateRoute path="/publicforum" component={PublicForum} />
         <PrivateRoute path="/myprojects" component={MyStudentProjects} />
         <PrivateRoute path="/clubforum" component={MyClub} />
-        <PrivateRouteTeachers path="/authteacher" component={TeacherDashbord} />
+        {/**lettttttttttttttttttttttttttt's see */}
+        <PrivateRoute path="/authteacher" component={TeacherDashbord} />
         <PrivateRouteTeachers path="/manageaccounts"  component={ManageAccounts} />
+        
       </Switch>
       <MyFooter />
     </div>

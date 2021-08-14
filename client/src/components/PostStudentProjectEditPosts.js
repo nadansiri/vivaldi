@@ -65,7 +65,7 @@ const PostStudentProjectEditPosts = (props) => {
             </Modal.Footer>
           </Modal>
         </>
-      ) : props.isTeacher === "teacher" ? (
+      ) :  (
         <>
           <Button
             variant="outline-success"
@@ -108,7 +108,7 @@ const PostStudentProjectEditPosts = (props) => {
             </Modal.Footer>
           </Modal>
         </>
-      ) : null}
+      ) }
     </div>
   );
 };

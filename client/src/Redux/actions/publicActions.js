@@ -6,39 +6,35 @@ import {
   //Comment // ACTIONS
   SUBMIT_COMMENT,
   GET_COMMENT,
-  LOAD_COMMENT,
   FAIL_COMMENT,
   //Contact Us // ACTIONS
   SUBMIT_FORM,
-  LOAD_FORM,
   FAIL_FORM,
   GET_FORM,
   //Forum Posts // ACTIONS
   SUBMIT_POST_IN_FORUM,
-  LOAD_POST_IN_FORUM,
   FAIL_POST_IN_FORUM,
   GET_POST_IN_FORUM,
   //Activities // ACTIONS 
   SUBMIT_ACTIVITY ,
-  LOAD_ACTIVITY ,
   FAIL_ACTIVITY ,
   GET_ACTIVITY ,
   //Student Projects // ACTIONS
   SUBMIT_STUDENT_PROJECT,
-  LOAD_STUDENT_PROJECT,
   FAIL_STUDENT_PROJECT,
   GET_STUDENT_PROJECT,
   //News // ACTIONS
   SUBMIT_NEWS,
-  LOAD_NEWS,
   FAIL_NEWS,
-  GET_NEWS
+  GET_NEWS,
+  //
+  LOAD,
 } from "../constants/actionTypes.js";
 
 //Submit A New Comment
 export const submitComment = (newComment) => async (dispatch) => {
   dispatch({
-    type: LOAD_COMMENT,
+    type: LOAD,
   });
   try {
     let res = await axios.post("/api/public/comment", newComment);
@@ -59,7 +55,7 @@ export const submitComment = (newComment) => async (dispatch) => {
 //Get All Comments
 export const allPublicComments = () => async (dispatch) => {
   dispatch({
-    type: LOAD_COMMENT,
+    type: LOAD,
   });
   try {
     let res = await axios.get("/api/public/comment");
@@ -92,7 +88,7 @@ export const deleteComments = (id) => async (dispatch) => {
 //Submit A Contact Us Form
 export const submitContactUsForm = (newContactUsForm) => async (dispatch) => {
   dispatch({
-    type: LOAD_FORM,
+    type: LOAD,
   });
   try {
     let res = await axios.post("/api/public/contactus", newContactUsForm);
@@ -111,7 +107,7 @@ export const submitContactUsForm = (newContactUsForm) => async (dispatch) => {
 //Get All Forms /ContactUs
 export const allContactUsForms = () => async (dispatch) => {
   dispatch({
-    type: LOAD_FORM,
+    type: LOAD,
   });
   try {
     let res = await axios.get("/api/public/contactus");
@@ -144,7 +140,7 @@ export const deleteForm = (id) => async (dispatch) => {
 //Submit A Post
 export const submitPostInForum = (newPost) => async (dispatch) => {
   dispatch({
-    type: LOAD_POST_IN_FORUM,
+    type: LOAD,
   });
   try {
     let res = await axios.post("/api/public/publicforum", newPost);
@@ -164,7 +160,7 @@ export const submitPostInForum = (newPost) => async (dispatch) => {
 //Get All Forms 
 export const allPostsInForum = () => async (dispatch) => {
   dispatch({
-    type: LOAD_POST_IN_FORUM,
+    type: LOAD,
   });
   try {
     let res = await axios.get("/api/public/publicforum");
@@ -210,7 +206,7 @@ export const editPostInForum = (id,updatedPost) => async (dispatch) => {
 //Submit
 export const submitActivity = (newActivity) => async (dispatch) => {
   dispatch({
-    type: LOAD_ACTIVITY,
+    type: LOAD,
   });
   try {
     let res = await axios.post("/api/public/activities", newActivity);
@@ -230,7 +226,7 @@ export const submitActivity = (newActivity) => async (dispatch) => {
 //Get All
 export const allActivities = () => async (dispatch) => {
   dispatch({
-    type: LOAD_ACTIVITY,
+    type: LOAD,
   });
   try {
     let res = await axios.get("/api/public/activities");
@@ -276,7 +272,7 @@ export const editActivity = (id,updatedActivity) => async (dispatch) => {
 //Submit
 export const submitStudentProject = (newStudentProject) => async (dispatch) => {
   dispatch({
-    type: LOAD_STUDENT_PROJECT,
+    type: LOAD,
   });
   try {
     let res = await axios.post("/api/public/studentprojects", newStudentProject);
@@ -296,7 +292,7 @@ export const submitStudentProject = (newStudentProject) => async (dispatch) => {
 //Get All
 export const allSubmittedStudentProjects = () => async (dispatch) => {
   dispatch({
-    type: LOAD_STUDENT_PROJECT,
+    type: LOAD,
   });
   try {
     let res = await axios.get("/api/public/studentprojects");
@@ -342,7 +338,7 @@ export const editStudentProject = (id,updatedStudentProject) => async (dispatch)
 //Submit
 export const submitNewNews = (newNews) => async (dispatch) => {
   dispatch({
-    type: LOAD_NEWS,
+    type: LOAD,
   });
   try {
     let res = await axios.post("/api/public/news", newNews);
@@ -362,7 +358,7 @@ export const submitNewNews = (newNews) => async (dispatch) => {
 //Get All
 export const allSubmittedNews = () => async (dispatch) => {
   dispatch({
-    type: LOAD_NEWS,
+    type: LOAD,
   });
   try {
     let res = await axios.get("/api/public/news");

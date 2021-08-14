@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Form, Button, ListGroup } from "react-bootstrap";
+import { Form, Button, ListGroup, Container, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import {
   submitPostInForum,
@@ -31,64 +31,81 @@ const PostInForum = (props) => {
   }, []);
 
   return (
-    <div>
-      <h1>Posts</h1>
-
-      <div className="PostInForum">
-        <Form>
-          <Form.Group controlId="exampleForm.ControlInput1">
-            <Form.Control
-              type="title"
-              name="title"
-              placeholder="Title"
-              onChange={handleChange}
+    <div className="PublicForum">
+      <Container>
+        <div style={{ display: "flex" }}>
+          <h1 style={{ fontSize: "80px", color: "white" }}>Public Forum</h1>
+          <h3 style={{ color: "black" }}>(Logged in as {props.role})</h3>
+        </div>
+        <Row>
+          <Col sm={4}>
+            <hr />
+            <div className="PostInForum">
+              <Form>
+                <Form.Group controlId="exampleForm.ControlInput1">
+                  <Form.Control
+                    type="title"
+                    name="title"
+                    placeholder="Title"
+                    onChange={handleChange}
+                  />
+                </Form.Group>
+                <Form.Group controlId="exampleForm.ControlInput1">
+                  <Form.Control
+                    type="postBody"
+                    name="postBody"
+                    as="textarea"
+                    rows={3}
+                    placeholder="Your Post"
+                    onChange={handleChange}
+                  />
+                </Form.Group>
+              </Form>
+              {errors && errors.map((el) => <p> {el.msg} </p>)}
+              <Button
+                className="CommentBtn"
+                variant="info"
+                onClick={() => dispatch(submitPostInForum(newPost))}
+              >
+                Submit Post
+              </Button>
+            </div>
+            <hr />
+            <img
+              width="100%"
+              src="/images/Image1pubfo.png"
             />
-          </Form.Group>
-          <Form.Group controlId="exampleForm.ControlInput1">
-            <Form.Control
-              type="postBody"
-              name="postBody"
-              as="textarea"
-              rows={3}
-              placeholder="Your Post"
-              onChange={handleChange}
-            />
-          </Form.Group>
-        </Form>
-        {errors && errors.map((el) => <p> {el.msg} </p>)}
-        <Button
-          className="CommentBtn"
-          variant="info"
-          onClick={() => dispatch(submitPostInForum(newPost))}
-        >
-          Submit Post
-        </Button>
-      </div>
-      <hr />
-
-      <div className="AllForms">
-        <ListGroup>
-          {SubmittedPostsData.map((el) => (
-            <ListGroup.Item key={el._id} className="SingleForm">
-              <h5>
-                <b>Title:</b> {el.title}
-              </h5>
-              <hr />
-              <h5>
-                <b>
-                  {el.firstName} {el.lastName} :
-                </b>
-              </h5>{" "}
-              <h5>{el.postBody}</h5>
-              <h6>{el.updatedAt}</h6>
-              {props.role === "ADMIN" || props.posterId === el.posterId ? (<div className="actionBtn2">
-                <ForumPostDelete id={el._id} /><ForumPostEdit oldPost={el} id={el._id} /></div>
-              ) : null}
-              
-            </ListGroup.Item>
-          ))}
-        </ListGroup>
-      </div>
+          </Col>
+          <Col sm={8}>
+            <div className="AllForms">
+              <ListGroup>
+                {SubmittedPostsData.map((el) => (
+                  <ListGroup.Item key={el._id} className="SingleForm">
+                    <h5>
+                      <b>Title:</b> {el.title}
+                    </h5>
+                    <hr />
+                    <h5>
+                      <b>
+                        {el.firstName} {el.lastName} :
+                      </b>
+                    </h5>{" "}
+                    <h5>{el.postBody}</h5>
+                    <h6>{el.updatedAt}</h6>
+                    {props.role === "ADMIN" ||
+                    props.posterId === el.posterId ? (
+                      <div className="actionBtn2">
+                        <ForumPostDelete id={el._id} />
+                        <ForumPostEdit oldPost={el} id={el._id} />
+                      </div>
+                    ) : null}
+                  </ListGroup.Item>
+                ))}
+              </ListGroup>
+            </div>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 };

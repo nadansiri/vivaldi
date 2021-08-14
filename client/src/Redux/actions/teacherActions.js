@@ -88,6 +88,9 @@ export const logoutTeacher = () => {
 
 //Get All Teachers
 export const allTeachers = () => async (dispatch) => {
+  dispatch({
+    type: LOAD_TEACHER
+})
     try {
       let res = await axios.get("/api/teachers/all");
       dispatch({

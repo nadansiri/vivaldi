@@ -70,6 +70,14 @@ const EditTeacherProfile = (props) => {
               />
             </InputGroup>
             <InputGroup className="mb-3">
+              <FormControl
+                placeholder="Avatar URL"
+                type="avatarUrl"
+                name="avatarUrl"
+                onChange={handleChange}
+              />
+            </InputGroup>
+            <InputGroup className="mb-3">
               <Form.Group controlId="exampleForm.ControlSelect2">
                 <Form.Label>Club</Form.Label>
                 <Form.Control

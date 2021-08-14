@@ -35,7 +35,7 @@ const ManageAccounts = (props) => {
     <div className="manageList">
       <>
         <hr />
-        <h1>Students</h1>
+        <h1 style={{ fontSize: "60px", color: "white" }}>Students</h1>
         <hr />
         {StudentErrors && StudentErrors.map((el) => <h2> {el.msg} </h2>)}
         <Table striped bordered hover variant="light">
@@ -76,7 +76,7 @@ const ManageAccounts = (props) => {
           //Render if Admin
           teacher.role === "ADMIN" ? (
       <>
-        <h1>Teachers</h1>
+        <h1 style={{ fontSize: "60px", color: "white" }}>Teachers</h1>
         <hr />
         {TeacherErrors && TeacherErrors.map((el) => <h2> {el.msg} </h2>)}
         <Table striped bordered hover variant="light">

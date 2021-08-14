@@ -31,10 +31,12 @@ const PORT = process.env.PORT ||4444;
 app.get("*", function (req, res) {
   res.send("<h1>Let's start the backend!!!</h1><hr>");
 });
-//For Heroku
+/*
+  //For Heroku
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
-}
+}}*/
+
 //listen
 app.listen(PORT, (err) =>
   err ? console.log(err) : console.log(`App listening on port ${PORT} `)

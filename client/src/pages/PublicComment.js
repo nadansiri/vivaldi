@@ -23,7 +23,7 @@ const PublicComment = () => {
   );
   useEffect(() => {
     getComments();
-  }, PublicCommentsData);
+  }, []);
 
   return (
     <div className="PublicComment">

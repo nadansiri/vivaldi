@@ -6,9 +6,6 @@ import {
   allSubmittedStudentProjects,
 } from "../Redux/actions/publicActions";
 
-import MyClubActivityDelete from "./MyClubActivityDelete";
-import MyClubActivityEdit from "./MyClubActivityEdit";
-
 const PostStudentProject = (props) => {
   const [studentProject, setStudentProject] = useState({
     posterFirstName: props.firstName,

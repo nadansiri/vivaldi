@@ -13,8 +13,7 @@ const MyClub = () => {
   return (
     <div className="MyClub">
       {isAuthAsTeacher ? (
-        <>{teacher.role==="ADMIN"?<h1>All Posts In Club Forums</h1>:<h1>{teacher.club} Forum</h1>}
-          
+        <>
           <PostActivity
             firstName={teacher.firstName}
             lastName={teacher.lastName}
@@ -25,7 +24,6 @@ const MyClub = () => {
         </>
       ) : isAuthAsStudent ? (
         <>
-          <h1>{student.club} Forum</h1>
           <PostActivity
             firstName={student.firstName}
             lastName={student.lastName}

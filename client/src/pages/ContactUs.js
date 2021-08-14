@@ -22,12 +22,14 @@ const ContactUs = (props) => {
   );
   useEffect(() => {
     getForms();
-  }, contactUsFormData);
+  }, []);
 
   return (
-    <div>
+    <div className="ContactUsPage">
       <h1>Contact Us!</h1>
-
+      {
+        //Don't Render the Forms if Admin
+        props.isAdmin != "ADMIN" ? (
       <div className="ContactUs">
         <div className="Contact">
           <Form>
@@ -114,6 +116,10 @@ const ContactUs = (props) => {
           width="60%"
         />
       </div>
+      ) : (
+        null
+      )
+    }
       <hr />
       {
         //Render the Forms if Admin

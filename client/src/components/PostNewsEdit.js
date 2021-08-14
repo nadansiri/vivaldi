@@ -49,6 +49,14 @@ const PostNewsEdit = (props) => {
                 />
               </Form.Group>
               <Form.Group controlId="exampleForm.ControlInput1">
+              <Form.Control
+                type="link"
+                name="newsPhotoURL"
+                placeholder="Photo URL"
+                onChange={handleChange}
+              />
+            </Form.Group>
+              <Form.Group controlId="exampleForm.ControlInput1">
                 <Form.Control
                   type="newsBody"
                   name="newsBody"

@@ -5,9 +5,9 @@ import {combineReducers} from "redux"
 import studentReducer from "./studentReducer"
 import teacherReducer from "./teacherReducer"
 import publicReducer from "./publicReducer"
-import userReducer from "./userReducer"
 //create rootReducer
-const rootReducer = combineReducers({publicReducer, studentReducer, teacherReducer, userReducer})
+
+const rootReducer = combineReducers({publicReducer, studentReducer, teacherReducer})
 
 //export
 export default rootReducer

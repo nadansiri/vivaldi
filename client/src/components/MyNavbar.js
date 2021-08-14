@@ -1,8 +1,26 @@
 import { Nav, Navbar, NavDropdown, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import TeacherNav from "./TeacherNav";
+import StudentNav from "./StudentNav";
+import FeaturedCarousel from "./FeaturedCarousel";
+
+import { useDispatch, useSelector } from "react-redux";
 
 const MyNavbar = () => {
+  const isAuthAsTeacher = useSelector((state) => state.teacherReducer.isAuthTeacher);
+  const isAuthAsStudent = useSelector((state) => state.studentReducer.isAuthStudent);
   return (
+    <>
+    {isAuthAsTeacher ? 
+      <>
+      <TeacherNav/>
+        
+      </>
+     : isAuthAsStudent ? 
+      <>
+      <StudentNav/> 
+      </>
+     : 
     <div className="MyNavbar">
       <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
         <Container>
@@ -43,7 +61,9 @@ const MyNavbar = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-    </div>
+      <FeaturedCarousel/>
+    </div>}
+    </>
   );
 };
 

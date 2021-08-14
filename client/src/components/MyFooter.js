@@ -34,7 +34,7 @@ const MyFooter = () => {
             <b>Follow us on</b>
           </h5>
           <a href="https://www.facebook.com/Centre.d.art.vivaldi.bousalem/"><img
-            src="https://lh3.googleusercontent.com/proxy/2n-GWVNdbJTKgGyYEb06F7iWaDgnZ6xZRSxWUBp523gddRTFIv-s7BEtBmu_4uI3RD-N5ntOqMUVkn3ZnIItfCAH72NrqLnoqomiMMWUAmUBHzV_0XjRGN3MmM3VBuBTyO8N93LbtM7kh5vllU4hoK-1QOrN-Q3bXTruhsb_D3Nk40E7hRQuLSzP8qrE6bu2Hm0qKilpmboyRUftNavFTHc"
+            src="http://assets.stickpng.com/thumbs/584ac2d03ac3a570f94a666d.png"
             width="30px"
             alt="logofb"
           /></a>

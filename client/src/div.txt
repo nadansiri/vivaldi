@@ -5,6 +5,10 @@ font-family: 'Lobster', cursive;
 font-family: 'Montserrat', sans-serif;
 font-family: 'Raleway', sans-serif;
 font-family: 'Roboto', sans-serif;
+
+
+
+fontFamily: "'Montserrat', sans-serif"
 ________________________________________
 
 COLORS:from green to yellow
@@ -20,7 +24,10 @@ rgb(238,129,30) carrot orange
 rgb(245,185,9) selective yellow
 rgb(243,212,27) turbo
 *********
-
+avatarUrl:{
+        type:String,
+        default:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhqI4txTRkj4_pCfr3NlNdbCbLYgX-nqjMX8wHEfx_A6Q8luaudlecd84nMDGZ1a4nwA0&usqp=CAU",
+    },
 
 
 

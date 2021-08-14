@@ -67,7 +67,7 @@ export const authedStudent= () => async(dispatch) => {
         let res = await axios.get("/api/students/authstudent", config)
         dispatch({
             type: AUTHSTUDENT,
-            payload: res.data //{user}
+            payload: res.data 
         })
     } catch (error) {
         const {errors} = error.response.data
@@ -87,6 +87,9 @@ export const logoutStudent = () => {
 }
 //Get All Students
 export const allStudents = () => async (dispatch) => {
+  dispatch({
+    type: LOADSTUDENT
+})
     try {
       let res = await axios.get("/api/students/all");
       dispatch({

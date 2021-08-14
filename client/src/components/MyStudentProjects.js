@@ -12,10 +12,8 @@ const MyStudentProjects = () => {
   const student = useSelector((state) => state.studentReducer.student);
   return (
     <div className="MyClub">
-      <h1>Student Projects</h1>
       {isAuthAsTeacher ? (
         <>
-          <h1>{teacher.club} Forum</h1>
           <PostStudentProjectGetPosts
             firstName={teacher.firstName}
             lastName={teacher.lastName}
@@ -26,7 +24,6 @@ const MyStudentProjects = () => {
         </>
       ) : isAuthAsStudent ? (
         <>
-          <h1>{student.club} Forum</h1>
           <PostStudentProjectGetPosts
             firstName={student.firstName}
             lastName={student.lastName}
