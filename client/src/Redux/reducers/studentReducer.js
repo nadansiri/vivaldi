@@ -7,11 +7,13 @@ import {
   STUDENTFAIL,
   AUTHSTUDENT,
   LOGOUTSTUDENT,
+  GET_ONE_STUDENT
   
 } from "../constants/actionTypes";
 
 //2-initial state
 const initialState = {
+  foundStudent:{},
   student: {},
   errors: [],
   loadStudent: false,
@@ -45,6 +47,12 @@ const studentReducer = (state = initialState, { type, payload }) => {
         ...state,
         loadStudent: false,
         StudentsData: payload.StudentsData,
+      };
+      case GET_ONE_STUDENT:
+      return {
+        ...state,
+        loadStudent: false,
+        foundStudent: payload.foundStudent,
       };
     case STUDENTFAIL:
       return {

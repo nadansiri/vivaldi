@@ -20,6 +20,7 @@ const TeacherSignUp = ({ history }) => {
             <img
               src="https://img.freepik.com/free-vector/tiny-teachers-with-educational-tools-stationery-isolated-flat-vector-illustration-cartoon-teachers-different-disciplines-as-geography-math-physical-culture-education-school-concept_74855-13261.jpg?size=626&ext=jpg"
               alt="Aaa"
+              width="100%"
             />
           </Col>
           <Col sm={7}>

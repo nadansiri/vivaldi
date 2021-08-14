@@ -10,7 +10,7 @@ export const AboutMusicClub = () => {
             <div className="aboutUsElement">
               <h1 style={{ color: "black", fontSize: "60px" }}>Music Club</h1>
               <hr />
-              <p style={{ textAlign:"justify" }}>
+              <p style={{ textAlign: "justify" }}>
                 "Playing isn't just fun, it's also the best way for young
                 children to learn. By playing, children can practise all the
                 skills they'll need as they grow up. And this is what we always
@@ -23,44 +23,24 @@ export const AboutMusicClub = () => {
                 <h3>Our Students:</h3>
                 <hr />
                 <Row>
-                  <Col>
-                    <iframe
-                      src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FCentre.d.art.vivaldi.bousalem%2Fvideos%2F487882765563757%2F&show_text=false&width=560&t=0"
-                      width="100%"
-                      allowfullscreen="true"
-                      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                      allowFullScreen="true"
-                    ></iframe>
-                  </Col>
-                  <Col>
-                    <iframe
-                      src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FCentre.d.art.vivaldi.bousalem%2Fvideos%2F3255117444591173%2F&show_text=false&width=560&t=0"
-                      width="100%"
-                      allowfullscreen="true"
-                      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                      allowFullScreen="true"
-                    ></iframe>
-                  </Col>
+                  <iframe
+                    src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FCentre.d.art.vivaldi.bousalem%2Fvideos%2F487882765563757%2F&show_text=false&width=560&t=0"
+                    width="100%"
+                    height="314"
+                    allowfullscreen="true"
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                    allowFullScreen="true"
+                  ></iframe>
                 </Row>
                 <Row>
-                  <Col>
-                    <iframe
-                      src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FCentre.d.art.vivaldi.bousalem%2Fvideos%2F487882765563757%2F&show_text=false&width=560&t=0"
-                      width="100%"
-                      allowfullscreen="true"
-                      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                      allowFullScreen="true"
-                    ></iframe>
-                  </Col>
-                  <Col>
-                    <iframe
-                      src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FCentre.d.art.vivaldi.bousalem%2Fvideos%2F3255117444591173%2F&show_text=false&width=560&t=0"
-                      width="100%"
-                      allowfullscreen="true"
-                      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                      allowFullScreen="true"
-                    ></iframe>
-                  </Col>
+                  <iframe
+                    src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FCentre.d.art.vivaldi.bousalem%2Fvideos%2F3255117444591173%2F&show_text=false&width=560&t=0"
+                    width="100%"
+                    height="314"
+                    allowfullscreen="true"
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                    allowFullScreen="true"
+                  ></iframe>
                 </Row>
                 <Row>
                   <iframe
@@ -123,7 +103,7 @@ export const AboutSportClub = () => {
               <h1 style={{ color: "black", fontSize: "60px" }}>Sports Club</h1>
               <hr />
               <h2>Do you play sports?</h2>
-              <p style={{ textAlign:"justify" }}>
+              <p style={{ textAlign: "justify" }}>
                 "If you do, then you know the value of hard work, commitment,
                 and determination in achieving success. Playing sports can help
                 you learn the importance of these values. Sports can also teach
@@ -202,7 +182,6 @@ export const AboutSportClub = () => {
     </div>
   );
 };
-//Not yet
 export const AboutArtClub = () => {
   return (
     <div className="AboutArtClub">

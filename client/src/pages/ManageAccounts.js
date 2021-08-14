@@ -6,8 +6,8 @@ import DeleteStudent from "../components/DeleteStudent.js";
 import DeleteTeacher from "../components/DeleteTeacher.js";
 import EditStudentProfile from "../components/EditStudentProfile.js";
 import EditTeacherProfile from "../components/EditTeacherProfile.js";
-import { allStudents } from "../Redux/actions/studentActions.js";
-import { allTeachers } from "../Redux/actions/teacherActions";
+import { allStudents, OneStudent } from "../Redux/actions/studentActions.js";
+import { allTeachers , OneTeacher} from "../Redux/actions/teacherActions";
 
 const ManageAccounts = (props) => {
   const StudentErrors = useSelector((state) => state.studentReducer.errors);
@@ -41,7 +41,7 @@ const ManageAccounts = (props) => {
         <Table striped bordered hover variant="light">
           <thead>
             <tr>
-              <th>#ID</th>
+              <th>Show Details</th>
               <th>First Name</th>
               <th>Last Name</th>
               <th>Email</th>
@@ -53,7 +53,7 @@ const ManageAccounts = (props) => {
             <tbody key={el._id}>
               <tr>
                 <td>
-                  <Link to={`/api/students/details/${el._id}`}>{el._id}</Link>
+                  <Link to={`/students/details/${el._id}`} onClick={() => dispatch(OneStudent(el._id))}>{el._id}</Link>
                 </td>
                 <td>{el.firstName}</td>
                 <td>{el.lastName}</td>
@@ -94,7 +94,7 @@ const ManageAccounts = (props) => {
             <tbody key={el._id}>
               <tr>
                 <td>
-                  <Link to={`/api/teachers/details/${el._id}`}>{el._id}</Link>
+                  <Link to={`/teachers/details/${el._id}`} onClick={() => dispatch(OneTeacher(el._id))}  >{el._id}</Link>
                 </td>
                 <td>{el.firstName}</td>
                 <td>{el.lastName}</td>

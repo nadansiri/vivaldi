@@ -41,7 +41,6 @@ h4 {
   text-align: center;
 }
 .register-page {
-  width: 70%;
   margin: auto;
   padding: 70px;
 }
@@ -130,15 +129,14 @@ h2 .NavTitle {
 }
 
 /*Contact Us*/
-.Contact {
-  width: 30%;
-}
+
 .ContactUs,
 .RegistrationFormWrapper {
   display: flex;
   justify-content: space-around;
 }
 .ContactUsPage {
+  padding: 50px;
   background: linear-gradient(45deg, #f0f7f7, white, white);
 }
 /****About us*******/
@@ -171,8 +169,8 @@ h2 .NavTitle {
 
 .AboutMusicClub {
   width: 100%;
-  background-image: url("./images/stefany-andrade-GbSCAAsU2Fo-unsplash.jpg");
-  /*background: linear-gradient(45deg, green, white);*/
+  /*background-image: url("./images/stefany-andrade-GbSCAAsU2Fo-unsplash.jpg");*/
+  background: linear-gradient(45deg, rgb(50,167,225), white);
   background-size: cover;
 }
 .AboutArtClub {

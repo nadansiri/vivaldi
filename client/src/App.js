@@ -26,25 +26,33 @@ import { useSelector } from "react-redux";
 import PublicForum from "./components/PublicForum";
 import MyClub from "./components/MyClub";
 import MyStudentProjects from "./components/MyStudentProjects";
-import {AboutArtClub, AboutMusicClub, AboutSportClub, Events} from "./pages/AboutOurClubs";
+import {
+  AboutArtClub,
+  AboutMusicClub,
+  AboutSportClub,
+  Events,
+} from "./pages/AboutOurClubs";
 import SpinnerLoad from "./components/SpinnerLoad";
 import MapContainer from "./components/MapContainer";
+import GetDetailsStudent from "./components/GetDetailsStudent";
+import GetDetailsTeacher from "./components/GetDetailsTeacher";
 
 function App() {
   const teacher = useSelector((state) => state.teacherReducer.teacher);
   const loadTeacher = useSelector((state) => state.teacherReducer.loadTeacher);
   const loadStudent = useSelector((state) => state.studentReducer.loadStudent);
   const load = useSelector((state) => state.publicReducer.load);
+  const students = useSelector((state) => state.studentReducer.StudentsData);
+  const teachers = useSelector((state) => state.teacherReducer.TeachersData);
+
   return (
     <div className="App">
       <MyNavbar />
-      {load||loadStudent||loadTeacher ? (
+      {load || loadStudent || loadTeacher ? (
         <>
-      <SpinnerLoad/>
-      </>
-      ) : (
-        null
-      )}
+          <SpinnerLoad />
+        </>
+      ) : null}
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/aboutus" component={AboutUs} />
@@ -61,16 +69,28 @@ function App() {
         <Route path="/clubs/club1" component={AboutMusicClub} />
         <Route path="/clubs/club2" component={AboutSportClub} />
         <Route path="/clubs/club3" component={AboutArtClub} />
-        {/* <Route path="/auth" component={Dashbord} /> */}
-        {/* <PrivateRoute path="/auth" render={(props) => <Dashbord {...props} />}  /> */}
+
+        {students.map((el) => (
+          <PrivateRouteTeachers
+            path={`/students/details/${el._id}`}
+            component={GetDetailsStudent} />
+        ))}
+        {teachers.map((el) => (
+          <PrivateRouteTeachers
+            path={`/teachers/details/${el._id}`}
+            component={GetDetailsTeacher} />
+        ))}
+        
         <PrivateRoute path="/authstudent" component={StudentDashbord} />
         <PrivateRoute path="/publicforum" component={PublicForum} />
         <PrivateRoute path="/myprojects" component={MyStudentProjects} />
         <PrivateRoute path="/clubforum" component={MyClub} />
         {/**lettttttttttttttttttttttttttt's see */}
         <PrivateRoute path="/authteacher" component={TeacherDashbord} />
-        <PrivateRouteTeachers path="/manageaccounts"  component={ManageAccounts} />
-        
+        <PrivateRouteTeachers
+          path="/manageaccounts"
+          component={ManageAccounts}
+        />
       </Switch>
       <MyFooter />
     </div>

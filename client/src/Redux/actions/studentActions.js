@@ -8,7 +8,8 @@ import {
     LOADSTUDENT,  
     AUTHSTUDENT,
     LOGOUTSTUDENT,
-    STUDENTFAIL} from "../constants/actionTypes.js"
+    STUDENTFAIL,
+  GET_ONE_STUDENT} from "../constants/actionTypes.js"
 
 //register the student
 export const registerStudent = (newStudent, history) => async(dispatch) => {
@@ -122,6 +123,25 @@ export const editStudents = (id,updatedStudent) => async (dispatch) => {
     try {
       let res = await axios.put(`/api/students/${id}`,updatedStudent);
       dispatch(allStudents());
+    } catch (error) {
+      const { errors } = error.response.data;
+      dispatch({
+        type: STUDENTFAIL,
+        payload: errors,
+      });
+    }
+  };
+  //Get one Student
+export const OneStudent = (id) => async (dispatch) => {
+  dispatch({
+    type: LOADSTUDENT
+})
+    try {
+      let res = await axios.get(`/api/students/${id}`);
+      dispatch({
+        type: GET_ONE_STUDENT,
+        payload: res.data, //{comment}
+      });
     } catch (error) {
       const { errors } = error.response.data;
       dispatch({

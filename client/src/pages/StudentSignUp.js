@@ -21,6 +21,8 @@ const StudentSignUp = ({ history }) => {
             <img
               src="https://img.freepik.com/free-vector/home-office-concept-black-man-with-headphones-laptop-working-from-home-student-freelancer_203228-605.jpg?size=626&ext=jpg"
               alt="Aaa"
+              width="100%"
+
             />
           </Col>
           <Col sm={7}>

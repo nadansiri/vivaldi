@@ -76,9 +76,9 @@ const MyClubActivityEdit = (props) => {
                   as="select"
                   onChange={handleChange}
                 >
-                  <option value="Club 1">Club 1</option>
-                  <option value="Club 2">Club 2</option>
-                  <option value="Club 3">Club 3</option>
+                  <option value="Music Club">Music Club</option>
+                  <option value="Sports Club">Sports Club</option>
+                  <option value="Art Club">Art Club</option>
                 </Form.Control>
               </Form.Group>
         </Form>

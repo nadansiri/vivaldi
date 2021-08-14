@@ -17,6 +17,7 @@ const {
 const StudentIsAuth = require("../../middlewares/StudentIsAuth");
 const TeacherIsAuth = require("../../middlewares/TeacherIsAuth");
 const AdminAuth = require("../../middlewares/AdminAuth");
+const { findById } = require("../../models/Student");
 
 //@route /api/students/register
 //desc create new student
@@ -145,6 +146,21 @@ Studentrouter.delete("/:id", function (req, res) {
   Student.findByIdAndRemove(removedID)
     .then((result) => res.status(200).send({ msg: "Student deleted successfully",result}))
     .catch((err) => res.status(500).send({ msg: "server error", err }));
+});
+Studentrouter.get("/:id", async (req, res) => {
+  const findID = req.params.id;
+
+  try {
+    let foundStudent = await Student.findById(findID)
+    res
+      .status(200)
+      .send({ msg: "Found", foundStudent });
+    if (!foundStudent) {
+      res.status(400).send({ msg: "None found", error });
+    }
+  } catch (error) {
+    res.status(500).send({ msg: "Server error", error });
+  }
 });
 
 module.exports = Studentrouter;

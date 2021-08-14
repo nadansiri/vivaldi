@@ -21,10 +21,10 @@ const TeacherSignIn = ({ history }) => {
             <img
               src="https://img.freepik.com/free-vector/tiny-teachers-with-educational-tools-stationery-isolated-flat-vector-illustration-cartoon-teachers-different-disciplines-as-geography-math-physical-culture-education-school-concept_74855-13261.jpg?size=626&ext=jpg"
               alt="Aaa"
+              width="100%"
             />
           </Col>
           <Col sm={7}>
-            <div className="wrapper">
               <Form className="register-page">
                 <Form.Group controlId="formBasicEmail">
                   <Form.Label>Email </Form.Label>
@@ -57,7 +57,6 @@ const TeacherSignIn = ({ history }) => {
                   Don't have an account? Sign Up
                 </Link>
               </Form>
-            </div>
           </Col>
         </Row>
       </Container>

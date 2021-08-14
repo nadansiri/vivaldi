@@ -7,10 +7,12 @@ import {
   AUTH_TEACHER,
   LOGOUT_TEACHER,
   TEACHER_FAIL,
+  GET_ONE_TEACHER
 } from "../constants/actionTypes.js";
 
 //2-initial state
 const initialState = {
+  foundTeacher:{},
   teacher: {},
   errors: [],
   loadTeacher: false,
@@ -41,6 +43,12 @@ const teacherReducer = (state = initialState, { type, payload }) => {
         loadTeacher: false,
         isAuthTeacher: true,
         TeachersData: payload.TeachersData,
+      };
+      case GET_ONE_TEACHER:
+      return {
+        ...state,
+        loadTeacher: false,
+        foundTeacher: payload.foundTeacher,
       };
     case AUTH_TEACHER:
       return {

@@ -177,4 +177,20 @@ teacherRouter.delete("/:id", function (req, res) {
     .catch((err) => res.status(500).send({ msg: "server error", err }));
 });
 
+
+teacherRouter.get("/:id", async (req, res) => {
+  try {
+    const findteacherID = req.params.id;
+    let foundTeacher = await Teacher.findById(findteacherID)
+    res
+      .status(200)
+      .send({ msg: "Found", foundTeacher });
+    if (!foundTeacher) {
+      res.status(400).send({ msg: "None found", error });
+    }
+  } catch (error) {
+    res.status(500).send({ msg: "Server error", error });
+  }
+});
+
 module.exports = teacherRouter;

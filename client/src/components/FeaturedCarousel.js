@@ -48,7 +48,6 @@ const FeaturedCarousel = () => {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-      ;
     </div>
   );
 };

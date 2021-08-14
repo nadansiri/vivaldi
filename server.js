@@ -27,10 +27,10 @@ app.use("/api/teachers", TeacherRouter);
 
 //port
 const PORT = process.env.PORT ||4444;
-
+/*
 app.get("*", function (req, res) {
   res.send("<h1>Let's start the backend!!!</h1><hr>");
-});
+});*/ 
 /*
   //For Heroku
 if (process.env.NODE_ENV === 'production') {
