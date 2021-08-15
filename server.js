@@ -2,6 +2,7 @@ console.clear();
 //
 const express = require("express");
 const mongoose = require("mongoose");
+const path = require('path');
 
 //require the db
 const connectDB = require("./config/connectDB"); 
