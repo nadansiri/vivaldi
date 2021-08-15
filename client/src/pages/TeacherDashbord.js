@@ -21,10 +21,10 @@ const TeacherDashbord = () => {
   
   return (
     <div id="dashboard">
-      <Container className="ContactDetails">
+      <Container >
         <Row>
           <Col sm={4}>
-            <Card className="ContactDetails" style={{ width: "100%" }}>
+            <Card  style={{ width: "100%" }}>
               <Card.Img
                 roundedCircle
                 variant="top"

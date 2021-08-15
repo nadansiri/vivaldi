@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Form, Button, ListGroup, Card } from "react-bootstrap";
+import { Form, Button, ListGroup, Card, Container, Col, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import {
   allSubmittedStudentProjects,
@@ -109,7 +109,10 @@ const ActivitiesForTeacherDashboard = (props) => {
         )}
       </div>
       <div className="profileElements">
-        <div className="profileElement2">
+      <Container >
+        <Row>
+          <Col sm={4}>
+          <div className="profileElement2">
           <h3>"You have proposed</h3>
           {res === 1 ? (
             <>
@@ -128,9 +131,15 @@ const ActivitiesForTeacherDashboard = (props) => {
               Propose an activity!
             </Link>
           ) : null}
-        </div>
+       </div>
+       </Col> 
+       
+    
+        
         {res > 0 ? (
           <>
+            
+            <Col sm={4}>
             <div className="profileElement2">
               {resSt > 1 ? (
                 <>
@@ -151,9 +160,13 @@ const ActivitiesForTeacherDashboard = (props) => {
               ) : (
                 <h3>No students submitted their projects yet.</h3>
               )}
-            </div>
+              </div>
+              </Col>
+            
             {resSt > 0 ? (
-              <div className="profileElement2">
+              
+                <Col sm={4}>
+                  <div className="profileElement2">
                 <h3>"You have </h3>
                 {notReviewed.length === 1 ? (
                   <>
@@ -168,10 +181,14 @@ const ActivitiesForTeacherDashboard = (props) => {
                     <h3>submitted projects to review. "</h3>
                   </>
                 )}
-              </div>
+                </div>
+                </Col>
+              
             ) : null}
           </>
         ) : null}
+          </Row>
+      </Container>
       </div>
       <hr />
       <div className="AllForms"></div>

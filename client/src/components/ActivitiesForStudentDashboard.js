@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Form, Button, ListGroup, Card } from "react-bootstrap";
+import { Form, Button, ListGroup, Card, Container, Col, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import {
   allSubmittedStudentProjects,
@@ -7,8 +7,6 @@ import {
 } from "../Redux/actions/publicActions";
 import { Link } from "react-router-dom";
 
-import MyClubActivityDelete from "./MyClubActivityDelete";
-import MyClubActivityEdit from "./MyClubActivityEdit";
 import PostStudentProject from "./PostStudentProject";
 
 const ActivitiesForStudentDashboard = (props) => {
@@ -112,6 +110,9 @@ const ActivitiesForStudentDashboard = (props) => {
         )}
       </div>
       <div className="profileElements">
+      <Container >
+        <Row>
+          <Col sm={4}>
         <div className="profileElement2">
           <h3>"You have </h3>
           {res === 1 ? (
@@ -132,8 +133,10 @@ const ActivitiesForStudentDashboard = (props) => {
             </Link>
           ) : null}
         </div>
+        </Col>
         {res > 0 ? (
           <>
+          <Col sm={4}>
             <div className="profileElement2">
               {resSt > 1 ? (
                 <>
@@ -155,7 +158,9 @@ const ActivitiesForStudentDashboard = (props) => {
                 <h3>You didn't submit any assignment yet.</h3>
               )}
             </div>
+            </Col>
             {resSt > 0 ? (
+              <Col sm={4}>
               <div className="profileElement2">
                 <h3>"You have </h3>
                 {notReviewed.length === 1 ? (
@@ -172,12 +177,14 @@ const ActivitiesForStudentDashboard = (props) => {
                   </>
                 )}
               </div>
+              </Col>
             ) : null}
           </>
         ) : null}
+      </Row>
+      </Container>
       </div>
       <hr />
-      <div className="AllForms"></div>
     </div>
   );
 };

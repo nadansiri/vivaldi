@@ -1,14 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  Form,
-  Button,
-  ListGroup,
-  Container,
-  Row,
-  Col,
-  Card,
-  Table,
-} from "react-bootstrap";
+import { Form, Button, Container, Row, Col, Card } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import PublicComment from "../pages/PublicComment";
 import {
@@ -16,6 +7,7 @@ import {
   allSubmittedNews,
 } from "../Redux/actions/publicActions";
 import MapContainer from "./MapContainer";
+import OpeningHours from "./OpeningHours";
 import PostNewsDelete from "./PostNewsDelete";
 
 import PostNewsEdit from "./PostNewsEdit";
@@ -85,8 +77,6 @@ const PostNews = (props) => {
       ) : null}
 
       <div className="AllForms">
-        
-        <hr />
         <Container className="ContactDetails">
           <Row>
             <Col sm={3}>
@@ -118,52 +108,11 @@ const PostNews = (props) => {
                   allowfullscreen="true"
                   allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
                 ></iframe>
-                <Card className="NewsItemFb" style={{ width: "100%" }}>
-                  <Card.Img variant="top" /*src={el.newsPhotoURL}*/ />
-                  <Card.Body>
-                    <Card.Title>عازفات نادي الموسيقى سنة اولى</Card.Title>
-                    <Card.Text>
-                      <p>
-                        في فترة زمنية قصيرة جدا و بنسق تدريب جدي استطاعت عازفات
-                        نادي الموسيقى سنة اولى الفوج 2
-                        #بمركز_الفن_vivaldi_ببوسالم من عزف مقطع من السمفونية
-                        عدد9 للموسيقار العالمي بيتهوفن
-                      </p>
-                    </Card.Text>
-                    <iframe
-                      src="https://www.facebook.com/plugins/video.php?height=253&href=https%3A%2F%2Fwww.facebook.com%2FCentre.d.art.vivaldi.bousalem%2Fvideos%2F3932305296838001%2F&show_text=true&width=560&t=0"
-                      width="80%"
-                      height="368"
-                      scrolling="no"
-                      frameborder="0"
-                      allowfullscreen="true"
-                      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                      allowFullScreen="true"
-                    />
-                  </Card.Body>
-                </Card>
               </div>
             </Col>
             <Col sm={5}>
-              {/*<ListGroup>*/}
               {SubmittedNews.map((el) => (
                 <div className="NewsItem">
-                  {/*<ListGroup.Item key={el._id} className="SingleForm">
-                <h5>
-                  <b>Title:</b> {el.title}
-                </h5>
-                <hr />
-                <img src={el.newsPhotoURL} width="100%"/>
-                <h5>{el.newsBody}</h5>
-
-                <h6>{el.updatedAt}</h6>
-                {teacher.role === "ADMIN" ? (
-                  <div className="actionBtn2">
-                    <PostNewsDelete id={el._id} />
-                    <PostNewsEdit oldNews={el} id={el._id} />
-                  </div>
-                ) : null}
-              </ListGroup.Item>*/}
                   <Card style={{ width: "100%" }}>
                     <Card.Img variant="top" src={el.newsPhotoURL} />
                     <Card.Body>
@@ -179,71 +128,15 @@ const PostNews = (props) => {
                   </Card>
                 </div>
               ))}
-              {/*</ListGroup>*/}
             </Col>
             <Col sm={4}>
               <MapContainer />
-              <div className="profileElement">
-              <h4 style={{textAlign:"center", marginTop:"20px"}}>Opening Hours</h4>
-                <Table responsive="sm">
-                  
-                  <tbody>
-                    <tr>
-                      <td>monday</td>
-                      <td>
-                        <p>09:00 - 12:00</p>
-                        <p>15:00 - 18:00</p>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>tuesday</td>
-                      <td>
-                        <p>09:00 - 12:00</p>
-                        <p>15:00 - 18:00</p>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>wednesday</td>
-                      <td>
-                        <p>09:00 - 12:00</p>
-                        <p>15:00 - 18:00</p>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>thirsday</td>
-                      <td>
-                        <p>09:00 - 12:00</p>
-                        <p>15:00 - 18:00</p>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>friday</td>
-                      <td>
-                        <p>09:00 - 12:00</p>
-                        <p>15:00 - 18:00</p>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>saturday</td>
-                      <td>
-                        <p>09:00 - 12:00</p>
-                        <p>15:00 - 18:00</p>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>sunday</td>
-                      <td>
-                        <p>09:00 - 18:00</p>
-                      </td>
-                    </tr>
-                  </tbody>
-                </Table>
-              </div>
+              <OpeningHours />
             </Col>
           </Row>
         </Container>
       </div>
-      <PublicComment />
+      {/*<PublicComment />*/}
     </div>
   );
 };

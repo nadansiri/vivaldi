@@ -1,5 +1,6 @@
 import { Container, Row, Col, Table } from "react-bootstrap";
 import MapContainer from "../components/MapContainer";
+import OpeningHours from "../components/OpeningHours";
 
 const AboutUs = () => {
   return (
@@ -83,63 +84,7 @@ const AboutUs = () => {
               </div>
               <MapContainer />
             </div>
-            <div className="aboutUsElement">
-              <h4 style={{ textAlign: "center", marginTop: "20px" }}>
-                Opening Hours
-              </h4>
-              <Table responsive="sm">
-                <tbody>
-                  <tr>
-                    <td>monday</td>
-                    <td>
-                      <p>09:00 - 12:00</p>
-                      <p>15:00 - 18:00</p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>tuesday</td>
-                    <td>
-                      <p>09:00 - 12:00</p>
-                      <p>15:00 - 18:00</p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>wednesday</td>
-                    <td>
-                      <p>09:00 - 12:00</p>
-                      <p>15:00 - 18:00</p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>thirsday</td>
-                    <td>
-                      <p>09:00 - 12:00</p>
-                      <p>15:00 - 18:00</p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>friday</td>
-                    <td>
-                      <p>09:00 - 12:00</p>
-                      <p>15:00 - 18:00</p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>saturday</td>
-                    <td>
-                      <p>09:00 - 12:00</p>
-                      <p>15:00 - 18:00</p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>sunday</td>
-                    <td>
-                      <p>09:00 - 18:00</p>
-                    </td>
-                  </tr>
-                </tbody>
-              </Table>
-            </div>
+            <OpeningHours/>
           </Col>
         </Row>
       </Container>
