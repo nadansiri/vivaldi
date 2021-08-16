@@ -2,9 +2,9 @@ import { Nav, Navbar, NavDropdown, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import TeacherNav from "./TeacherNav";
 import StudentNav from "./StudentNav";
-import FeaturedCarousel from "./FeaturedCarousel";
 
 import { useDispatch, useSelector } from "react-redux";
+import AADemoCarousel from "./AADemoCarousel";
 
 const MyNavbar = () => {
   const isAuthAsTeacher = useSelector((state) => state.teacherReducer.isAuthTeacher);
@@ -61,7 +61,7 @@ const MyNavbar = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <FeaturedCarousel/>
+      <AADemoCarousel/>
     </div>}
     </>
   );
