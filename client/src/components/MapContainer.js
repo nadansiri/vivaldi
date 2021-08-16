@@ -10,7 +10,7 @@ const MapContainer = () => {
   };
 
   const mapStyles = {
-    height: "100vh",
+    height: "400px",
     width: "100%",
   };
 
