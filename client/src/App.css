@@ -220,6 +220,10 @@ h2 .NavTitle {
     rgb(75, 50, 137)
   );
 }
+.NewestFirst{
+  display: flex;
+  flex-direction: column-reverse;
+}
 .NewsItem {
   margin: 5px;
 }

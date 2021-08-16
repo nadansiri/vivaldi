@@ -108,6 +108,7 @@ const PostActivity = (props) => {
                 <h3>Activities posted by you:</h3>
                 <hr />
                 <ListGroup>
+                  <div className="NewestFirst">
                   {SubmittedActivities.map((el) => (
                     <div>
                       {props.posterId == el.posterId ? (
@@ -148,6 +149,7 @@ const PostActivity = (props) => {
                       ) : null}
                     </div>
                   ))}
+                  </div>
                 </ListGroup>
               </div>
             ) : null}
@@ -162,8 +164,9 @@ const PostActivity = (props) => {
               <h3>List of Your Activities </h3>
               <hr />
               <ListGroup>
+                <div className="NewestFirst">
                 {SubmittedActivities.map((el) => (
-                  <div>
+                  <div >
                     {props.role === "ADMIN" || props.club === el.club ? (
                       <ListGroup.Item key={el._id} className="SingleForm">
                         <h5>
@@ -199,6 +202,7 @@ const PostActivity = (props) => {
                     ) : null}
                   </div>
                 ))}
+                </div>
               </ListGroup>
             </div>
           </Col>

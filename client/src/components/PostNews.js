@@ -79,7 +79,7 @@ const PostNews = (props) => {
       <div className="AllForms">
         <Container className="ContactDetails">
           <Row>
-            <Col sm={3}>
+            {/*<Col sm={3}>
               <div className="FbNewsItems">
                 <iframe
                   className="NewsItemFb"
@@ -109,8 +109,8 @@ const PostNews = (props) => {
                   allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
                 ></iframe>
               </div>
-            </Col>
-            <Col sm={5}>
+            </Col>*/}
+            <Col className="NewestFirst" sm={8}>
               {SubmittedNews.map((el) => (
                 <div className="NewsItem">
                   <Card style={{ width: "100%" }}>
@@ -130,8 +130,9 @@ const PostNews = (props) => {
               ))}
             </Col>
             <Col sm={4}>
+            <OpeningHours />
               <MapContainer />
-              <OpeningHours />
+              
             </Col>
           </Row>
         </Container>

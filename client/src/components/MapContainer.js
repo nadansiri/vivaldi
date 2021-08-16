@@ -20,11 +20,13 @@ const MapContainer = () => {
   };
 
   return (
+    <div className="aboutUsElement">
     <LoadScript googleMapsApiKey="AIzaSyC-9HBtGH2Tn5omz6Y4g9B29Jg5EVVx2xE">
       <GoogleMap mapContainerStyle={mapStyles} zoom={13} center={defaultCenter}>
         <Marker key={item.name} position={item.location} />
       </GoogleMap>
     </LoadScript>
+    </div>
   );
 };
 export default MapContainer;

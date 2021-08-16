@@ -1,5 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Form, Button, ListGroup, Container, Row, Col } from "react-bootstrap";
+import {
+  Form,
+  Button,
+  ListGroup,
+  Container,
+  Row,
+  Col,
+  Card,
+} from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import {
   submitPostInForum,
@@ -71,37 +79,31 @@ const PostInForum = (props) => {
               </Button>
             </div>
             <hr />
-            <img
-              width="100%"
-              src="/images/Image1pubfo.png"
-            />
+            <img width="100%" src="/images/Image1pubfo.png" />
           </Col>
           <Col sm={8}>
-            <div className="AllForms">
-              <ListGroup>
+            <div className="AllForms ">
+              <div className="NewestFirst">
                 {SubmittedPostsData.map((el) => (
-                  <ListGroup.Item key={el._id} className="SingleForm">
-                    <h5>
-                      <b>Title:</b> {el.title}
-                    </h5>
-                    <hr />
-                    <h5>
-                      <b>
+                  <Card key={el._id} className="SingleForm">
+                    <Card.Header>Title: {el.title}</Card.Header>
+                    <Card.Body>
+                      <Card.Title>
                         {el.firstName} {el.lastName} :
-                      </b>
-                    </h5>{" "}
-                    <h5>{el.postBody}</h5>
-                    <h6>{el.updatedAt}</h6>
-                    {props.role === "ADMIN" ||
-                    props.posterId === el.posterId ? (
-                      <div className="actionBtn2">
-                        <ForumPostDelete id={el._id} />
-                        <ForumPostEdit oldPost={el} id={el._id} />
-                      </div>
-                    ) : null}
-                  </ListGroup.Item>
+                      </Card.Title>
+                      <Card.Text>{el.postBody}</Card.Text>
+                      <h6>{el.updatedAt}</h6>
+                      {props.role === "ADMIN" ||
+                      props.posterId === el.posterId ? (
+                        <div className="actionBtn2">
+                          <ForumPostDelete id={el._id} />
+                          <ForumPostEdit oldPost={el} id={el._id} />
+                        </div>
+                      ) : null}
+                    </Card.Body>
+                  </Card>
                 ))}
-              </ListGroup>
+              </div>
             </div>
           </Col>
         </Row>
