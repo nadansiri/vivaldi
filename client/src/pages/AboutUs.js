@@ -70,6 +70,7 @@ const AboutUs = () => {
             </div>
           </Col>
           <Col sm={4}>
+          <OpeningHours/>
             <div className="aboutUsElement">
               <div style={{ textAlign: "center" }}>
                 <img src="/images/logoVIVALDI.png" alt="logo" />
@@ -84,7 +85,6 @@ const AboutUs = () => {
               </div>
               <MapContainer />
             </div>
-            <OpeningHours/>
           </Col>
         </Row>
       </Container>

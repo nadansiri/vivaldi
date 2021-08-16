@@ -8,8 +8,9 @@ import {
 } from "../Redux/actions/publicActions";
 import MapContainer from "./MapContainer";
 import OpeningHours from "./OpeningHours";
-import PostNewsDelete from "./PostNewsDelete";
+import ANewCarousel from "./ANewCarousel";
 
+import PostNewsDelete from "./PostNewsDelete";
 import PostNewsEdit from "./PostNewsEdit";
 
 const PostNews = (props) => {
@@ -117,7 +118,7 @@ const PostNews = (props) => {
                     <Card.Img variant="top" src={el.newsPhotoURL} />
                     <Card.Body>
                       <Card.Title>{el.title}</Card.Title>
-                      <Card.Text>{el.newsBody}</Card.Text>
+                      <Card.Text style={{ textAlign: "justify", textAlignLast: "center" }}>{el.newsBody}</Card.Text>
                       {teacher.role === "ADMIN" ? (
                         <div className="actionBtn2">
                           <PostNewsDelete id={el._id} />
@@ -126,8 +127,10 @@ const PostNews = (props) => {
                       ) : null}{" "}
                     </Card.Body>
                   </Card>
+                  
                 </div>
               ))}
+              <ANewCarousel/>
             </Col>
             <Col sm={4}>
             <OpeningHours />

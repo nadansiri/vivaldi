@@ -44,7 +44,8 @@ const PostNewsEdit = (props) => {
                 <Form.Control
                   type="title"
                   name="title"
-                  placeholder="Title"
+                  value={editedNews.title}
+                  placeholder={editedNews.title}
                   onChange={handleChange}
                 />
               </Form.Group>
@@ -62,7 +63,8 @@ const PostNewsEdit = (props) => {
                   name="newsBody"
                   as="textarea"
                   rows={3}
-                  placeholder="The News"
+                  value={editedNews.newsBody}
+                  placeholder={editedNews.newsBody}
                   onChange={handleChange}
                 />
               </Form.Group>

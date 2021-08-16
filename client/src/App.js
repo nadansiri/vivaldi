@@ -36,6 +36,7 @@ import SpinnerLoad from "./components/SpinnerLoad";
 import MapContainer from "./components/MapContainer";
 import GetDetailsStudent from "./components/GetDetailsStudent";
 import GetDetailsTeacher from "./components/GetDetailsTeacher";
+import ANewCarousel from "./components/ANewCarousel";
 
 function App() {
   const teacher = useSelector((state) => state.teacherReducer.teacher);

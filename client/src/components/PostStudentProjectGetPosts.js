@@ -31,7 +31,7 @@ const PostStudentProjectGetPosts = (props) => {
         <h1 style={{ fontSize: "80px", color: "white" }}>Projects</h1>
         <h3 style={{ color: "black" }}>{props.club} Forum</h3>
       </div>
-      {errors && errors.map((el) => <p> {el.msg} </p>)}
+      {/*errors && errors.map((el) => <p> {el.msg} </p>)*/}
       <Container className="ContactDetails">
         <Row>
           <Col sm={4}>
@@ -127,7 +127,7 @@ const PostStudentProjectGetPosts = (props) => {
                           <h6>{el.updatedAt}</h6>
                           <hr />
                           <h5>Review: {el.review} </h5>
-                          <h6>Mark: {el.mark}/100 </h6>
+                          <h6>Grade: {el.mark}/100 </h6>
                           {props.role === "ADMIN" ||
                           props.posterId === el.posterId ? (
                             <div className="actionBtn2">

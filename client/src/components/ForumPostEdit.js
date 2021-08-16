@@ -44,6 +44,7 @@ const ForumPostEdit = (props) => {
             <Form.Control
               type="title"
               name="title"
+              value={editedPost.title}
               placeholder="Title"
               onChange={handleChange}
             />
@@ -52,6 +53,7 @@ const ForumPostEdit = (props) => {
             <Form.Control
               type="postBody"
               name="postBody"
+              value={editedPost.postBody}
               as="textarea"
               rows={3}
               placeholder="Your Post"

@@ -42,6 +42,7 @@ const EditStudentProfile = (props) => {
             <InputGroup className="mb-3">
               <FormControl
                 placeholder="First Name"
+                value={Edited.firstName}
                 name="firstName"
                 onChange={handleChange}
               />
@@ -49,6 +50,7 @@ const EditStudentProfile = (props) => {
             <InputGroup className="mb-3">
               <FormControl
                 placeholder="Last Name"
+                value={Edited.lastName}
                 name="lastName"
                 onChange={handleChange}
               />
@@ -56,6 +58,7 @@ const EditStudentProfile = (props) => {
             <InputGroup className="mb-3">
               <FormControl
                 placeholder="email@example.com"
+                value={Edited.email}
                 name="email"
                 onChange={handleChange}
               />

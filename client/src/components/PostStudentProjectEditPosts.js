@@ -84,6 +84,7 @@ const PostStudentProjectEditPosts = (props) => {
                   <Form.Control
                     type="review"
                     name="review"
+                    value={editedStudentProject.review}
                     placeholder="Review"
                     onChange={handleChange}
                   />

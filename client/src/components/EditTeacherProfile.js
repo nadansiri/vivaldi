@@ -44,12 +44,14 @@ const EditTeacherProfile = (props) => {
               <FormControl
                 placeholder="First Name"
                 name="firstName"
+                value={Edited.firstName}
                 onChange={handleChange}
               />
             </InputGroup>
             <InputGroup className="mb-3">
               <FormControl
                 placeholder="Last Name"
+                value={Edited.lastName}
                 name="lastName"
                 onChange={handleChange}
               />
@@ -57,6 +59,7 @@ const EditTeacherProfile = (props) => {
             <InputGroup className="mb-3">
               <FormControl
                 placeholder="email@example.com"
+                value={Edited.email}
                 name="email"
                 onChange={handleChange}
               />
@@ -101,8 +104,8 @@ const EditTeacherProfile = (props) => {
                   as="select"
                   onChange={handleChange}
                 >
-                  <option value="teacher">teacher</option>
-                  <option value="ADMIN">admin</option>
+                  <option value="teacher">Teacher</option>
+                  <option value="ADMIN">Admin</option>
                 </Form.Control>
               </Form.Group>
             </InputGroup>

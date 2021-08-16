@@ -61,7 +61,7 @@ const MyNavbar = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <AADemoCarousel/>
+      <img width="100%" src="/images/Diapositive5.JPG" />
     </div>}
     </>
   );
